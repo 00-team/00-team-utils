@@ -1,0 +1,12 @@
+.github
+.prettierrc
+.gitattributes
+src
+dev
+dist
+webpack
+.vscode
+__tests__
+jest.config.ts
+jest.setup.ts
+postcss.config.js
