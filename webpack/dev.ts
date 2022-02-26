@@ -16,8 +16,16 @@ const Config: Configuration = {
     ...Base,
     mode: 'development',
     entry: resolve(DEV_DIR, 'App.tsx'),
+    module: {
+        rules: [
+            ...Base.module!.rules!,
+            {
+                test: /\.(s?css)$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+        ],
+    },
     devtool: 'source-map',
-
     devServer: {
         port: 8000,
         hot: true,
