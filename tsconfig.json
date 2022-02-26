@@ -4,7 +4,7 @@
         "allowUnusedLabels": false,
         "target": "ES5",
         "downlevelIteration": true,
-        "module": "UMD",
+        "module": "CommonJS",
         "allowUmdGlobalAccess": true,
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "jsx": "react",
@@ -12,7 +12,7 @@
         "declarationMap": true,
         "sourceMap": true,
         "outDir": "./lib",
-        "rootDir": "./src",
+        "rootDir": "./",
         "removeComments": true,
         "noEmitOnError": true,
 
@@ -40,5 +40,5 @@
         // "resolveJsonModule": true
     },
     "include": ["./src"],
-    "exclude": ["webpack*", "*.js", "**/__tests__", "./lib", "./dev"]
+    "exclude": ["**/*.test.*", "**/*.js", "**/__tests__", "./lib", "./dev"]
 }
