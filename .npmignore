@@ -3,10 +3,6 @@
 .gitattributes
 src
 dev
-dist
+tsconfig.json
 webpack
-.vscode
-__tests__
-jest.config.ts
-jest.setup.ts
-postcss.config.js
+.babelrc
