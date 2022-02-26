@@ -6,7 +6,7 @@ interface AvatarProps {
     username?: ITEM
 }
 
-const Avatar: FC<AvatarProps> = ({ picture, username }) => {
+export const Avatar: FC<AvatarProps> = ({ picture, username }) => {
     if (picture) {
         return (
             <img
@@ -42,7 +42,7 @@ const Avatar: FC<AvatarProps> = ({ picture, username }) => {
                     textAnchor='middle'
                     dominantBaseline='middle'
                     style={{
-                        fontFamily: "'Lato', 'Nastaliq', sans-serif",
+                        fontFamily: 'inherit',
                         fontSize: '300px',
                         lineHeight: 1,
                         textTransform: 'uppercase',
@@ -156,5 +156,3 @@ const COLOR = (): { b: string; c: string } => {
 
     return { b: hex, c: c }
 }
-
-export { Avatar }
