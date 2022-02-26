@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 import { render } from 'react-dom'
 
-import { Avatar } from '..'
+import { Hexaload } from '..'
+
+import './style.scss'
 
 const App: FC = () => {
     return (
-        <div style={{ width: '300px', fontFamily: 'sans-serif' }}>
-            <Avatar username='💛' />
+        <div className='app'>
+            <Hexaload />
         </div>
     )
 }
