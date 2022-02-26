@@ -23,7 +23,7 @@ export const Avatar: FC<AvatarProps> = ({ picture, username }) => {
                 xmlns='http://www.w3.org/2000/svg'
                 width='100%'
                 height='100%'
-                viewBox='0 0 500 500'
+                viewBox='0 0 5 5'
             >
                 <rect
                     x='0'
@@ -43,7 +43,7 @@ export const Avatar: FC<AvatarProps> = ({ picture, username }) => {
                     dominantBaseline='middle'
                     style={{
                         fontFamily: 'inherit',
-                        fontSize: '300px',
+                        fontSize: '3px',
                         lineHeight: 1,
                         textTransform: 'uppercase',
                         fontWeight: 'bold',
@@ -124,7 +124,8 @@ export const Avatar: FC<AvatarProps> = ({ picture, username }) => {
 }
 
 const FirstChar = (username?: ITEM) => {
-    if (username && username.charAt(0)) return username.charAt(0)
+    if (username && username.codePointAt(0))
+        return String.fromCodePoint(username.codePointAt(0)!)
     else return 'G'
 }
 

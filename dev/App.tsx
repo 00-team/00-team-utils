@@ -5,8 +5,8 @@ import { Avatar } from '..'
 
 const App: FC = () => {
     return (
-        <div>
-            <Avatar username='12' />
+        <div style={{ width: '300px', fontFamily: 'sans-serif' }}>
+            <Avatar username='💛' />
         </div>
     )
 }
