@@ -124,8 +124,12 @@ export const Avatar: FC<AvatarProps> = ({ picture, username }) => {
 }
 
 const FirstChar = (username?: ITEM) => {
-    if (username && username.codePointAt(0))
-        return String.fromCodePoint(username.codePointAt(0)!)
+    if (username)
+        try {
+            return String.fromCodePoint(username.codePointAt(0)!)
+        } catch (error) {
+            return username.charAt(0)
+        }
     else return 'G'
 }
 

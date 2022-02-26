@@ -31,6 +31,6 @@ describe('Avatar', () => {
         const avatar = container.querySelector('svg')
 
         expect(avatar?.tagName).toBe('svg')
-        expect(avatar?.textContent).toBe(username.at(0))
+        expect(avatar?.textContent).toBe(username.charAt(0))
     })
 })
