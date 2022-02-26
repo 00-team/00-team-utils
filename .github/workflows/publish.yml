@@ -18,6 +18,8 @@ jobs:
                   node-version: 12
                   registry-url: https://registry.npmjs.org/
             - run: npm ci
+            - name: runing Tests
+              run: npm test
             - name: Build Package
               run: npm run build
             - name: Publish Package
