@@ -1,7 +1,7 @@
 {
     "name": "@00-team/utils",
     "private": false,
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "00 Team utils on npm",
     "main": "./lib/index.js",
     "scripts": {
