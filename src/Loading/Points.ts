@@ -30,9 +30,9 @@ const DataBase: DataBaseType = {
     triangle: {
         viewBox: '0 0 1 1',
         points: [
-            [0, 1],
-            [1, 1],
-            [0.5, 0.134],
+            [0.5, 0.04],
+            [0, 0.96],
+            [1, 0.96],
         ],
     },
 }
