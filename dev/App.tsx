@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
 import { render } from 'react-dom'
 
-import { Hexaload } from '..'
+import { Loading } from '..'
 
 import './style.scss'
 
 const App: FC = () => {
     return (
         <div className='app'>
-            <Hexaload />
+            <Loading shape='triangle' />
         </div>
     )
 }
