@@ -1,37 +1,11 @@
 import React, { FC } from 'react'
 
-interface HexaloadProps {
-    duration?: string | number
-}
-
-type Point = [number, number]
-const Points: Point[] = [
-    [1.5, 0.4],
-    [0, 3],
-    [1.5, 5.6],
-    [4.5, 5.6],
-    [6, 3],
-    [4.5, 0.4],
-]
-
-export const Hexaload: FC<HexaloadProps> = ({ duration = '707ms' }) => {
-    return (
-        <svg viewBox='0 0 6 6'>
-            <clipPath id='hex'>
-                <path d='M 4.5 0.4 L 1.5 0.4 L 0 3 L 1.5 5.6 L 4.5 5.6 L 6 3 L 4.5 0.4 Z' />
-            </clipPath>
-
-            <g clipPath='url(#hex)'>
-                {Points.map((p, idx) => (
-                    <Line point={p} index={idx} dur={duration} />
-                ))}
-            </g>
-        </svg>
-    )
-}
+// points
+import { Point } from './Points'
 
 interface LineProps {
     point: Point
+    points: Point[]
     index: number
     dur: string | number
 }
@@ -45,10 +19,10 @@ const MainAnimeProps = {
 
 const AID = (adx: number, idx: number) => `OOTeamLoadingAnime${adx}${idx}`
 
-const Line: FC<LineProps> = ({ point, index, dur }) => {
-    const LastIndex = Points.length - 1
+const Line: FC<LineProps> = ({ point, index, dur, points }) => {
+    const LastIndex = points.length - 1
 
-    const NextPoint = index === LastIndex ? Points.at(0) : Points.at(index + 1)
+    const NextPoint = index === LastIndex ? points.at(0) : points.at(index + 1)
     if (!NextPoint) return <></>
 
     const x1 = point[0]
@@ -131,3 +105,5 @@ const Line: FC<LineProps> = ({ point, index, dur }) => {
         </line>
     )
 }
+
+export default Line
