@@ -1,14 +1,20 @@
 import React, { FC } from 'react'
 import { render } from 'react-dom'
 
-import { Loading } from '..'
+import { NiceDoc } from '..'
 
 import './style.scss'
+
+const doc = `Line 1
+
+Line 3`
 
 const App: FC = () => {
     return (
         <div className='app'>
-            <Loading shape='triangle' />
+            <div className='doc'>
+                <NiceDoc doc={doc} type='div' />
+            </div>
         </div>
     )
 }
