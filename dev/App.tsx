@@ -1,20 +1,19 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { render } from 'react-dom'
 
-import { NiceDoc } from '..'
+import { CountAnim } from '..'
 
 import './style.scss'
 
-const doc = `Line 1
-
-Line 3`
-
 const App: FC = () => {
+    const [Count, setCount] = useState(1e7)
+
     return (
         <div className='app'>
-            <div className='doc'>
-                <NiceDoc doc={doc} type='div' />
-            </div>
+            <CountAnim end={Count} />
+            <button onClick={() => setCount(s => s + 1)}>
+                Add Count {Count}
+            </button>
         </div>
     )
 }
