@@ -8,7 +8,7 @@ interface CountAnimProps {
     end: number
     speed?: number
     start?: number
-    format?: boolean
+    format?: false
     CheckEnd?: CheckEnd
     Operation?: Operation
     GetAccumulator?: GetAccumulator
@@ -94,10 +94,9 @@ class CountAnim extends Component<CountAnimProps, CountAnimState> {
     }
 
     override render(): ReactElement {
-        if (this.props.format)
-            return <>{this.formatter.format(this.state.Count)}</>
+        if (this.props.format === false) return <>Count: {this.state.Count}</>
 
-        return <>Count: {this.state.Count}</>
+        return <>{this.formatter.format(this.state.Count)}</>
     }
 }
 
