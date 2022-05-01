@@ -1,10 +1,10 @@
 {
     "name": "@00-team/utils",
     "private": false,
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "00 Team utils on npm",
     "main": "./lib/index.js",
-    "sass": "./lib/sass/index.scss",
+    "sass": "./lib/sass/",
     "scripts": {
         "build": "webpack -c ./webpack/lib.ts",
         "build:watch": "webpack -c ./webpack/lib.ts -w",
