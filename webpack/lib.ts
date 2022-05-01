@@ -4,6 +4,9 @@ import Base from './base'
 // path
 import { resolve, SRC_DIR, LIB_DIR } from './config/path'
 
+// plugins
+import Copy from 'copy-webpack-plugin'
+
 const Config: Configuration = {
     ...Base,
     mode: 'production',
@@ -26,6 +29,16 @@ const Config: Configuration = {
         minimize: true,
         emitOnErrors: false,
     },
+    plugins: [
+        new Copy({
+            patterns: [
+                {
+                    from: resolve(SRC_DIR, 'sass'),
+                    to: resolve(LIB_DIR, 'sass'),
+                },
+            ],
+        }),
+    ],
 }
 
 export default Config
