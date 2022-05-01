@@ -1,8 +1,8 @@
 {
     "name": "@00-team/utils",
     "private": false,
-    "version": "0.1.6",
-    "description": "00 Team utils on npm",
+    "version": "0.1.7",
+    "description": "00 Team React Utils",
     "main": "./lib/index.js",
     "sass": "./lib/sass/",
     "scripts": {
@@ -15,7 +15,12 @@
         "type": "git",
         "url": "git+https://github.com/00-team/00-team-utils.git"
     },
-    "keywords": [],
+    "keywords": [
+        "00 Team",
+        "00 Team Utils",
+        "Utils",
+        "React Utils"
+    ],
     "author": "",
     "license": "GPL-3.0",
     "engines": {
