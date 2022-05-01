@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react'
+import { Component } from 'react'
 
 type CheckEnd = (count: number, end: number) => boolean
 type Operation = (count: number, accumulator: number) => number
@@ -93,10 +93,10 @@ class CountAnim extends Component<CountAnimProps, CountAnimState> {
         }
     }
 
-    override render(): ReactElement {
-        if (this.props.format === false) return <>{this.state.Count}</>
+    override render(): string {
+        if (this.props.format === false) return this.state.Count.toString()
 
-        return <>{this.formatter.format(this.state.Count)}</>
+        return this.formatter.format(this.state.Count).toString()
     }
 }
 
