@@ -1,4 +1,5 @@
-const C = (condition: unknown, cls: string) => (!!condition ? ` ${cls} ` : '')
+const C = (condition: unknown, cls?: string) =>
+    !!condition ? ` ${cls || 'active'} ` : ''
 
 const Empty = (o: Object) => Object.keys(o).length === 0
 
