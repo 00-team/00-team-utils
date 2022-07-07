@@ -1,3 +1,10 @@
+/**
+ * @param cls if not provided the return class would be ***active***
+ * @returns cls if condition is true **ELSE** empty string
+ * ```js
+ * !!condition ? ` ${cls || 'active'} ` : ""
+ * ```
+ */
 const C = (condition: unknown, cls?: string) =>
     !!condition ? ` ${cls || 'active'} ` : ''
 
