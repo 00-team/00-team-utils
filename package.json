@@ -8,8 +8,7 @@
     "scripts": {
         "build": "webpack -c ./webpack/lib.ts",
         "build:watch": "webpack -c ./webpack/lib.ts -w",
-        "dev": "webpack serve -c ./webpack/dev.ts",
-        "test": "jest"
+        "dev": "webpack serve -c ./webpack/dev.ts"
     },
     "repository": {
         "type": "git",
@@ -21,7 +20,7 @@
         "Utils",
         "React Utils"
     ],
-    "author": "",
+    "author": "00 Team",
     "license": "GPL-3.0",
     "engines": {
         "node": ">=16.0.0"
