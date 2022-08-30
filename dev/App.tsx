@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 import './style.scss'
 
 const App: FC = () => {
-    return <div className='app'></div>
+    return <div className='app'>App</div>
 }
 
-render(<App />, document.getElementById('root'))
+createRoot(document.getElementById('root')!).render(<App />)

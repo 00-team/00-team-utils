@@ -2,7 +2,7 @@ import { Configuration } from 'webpack'
 import Base from './base'
 
 // path
-import { resolve, SRC_DIR, LIB_DIR } from './config/path'
+import { LIB_DIR, resolve, SRC_DIR } from './config/path'
 
 // plugins
 import Copy from 'copy-webpack-plugin'
@@ -10,7 +10,7 @@ import Copy from 'copy-webpack-plugin'
 const Config: Configuration = {
     ...Base,
     mode: 'production',
-    entry: resolve(SRC_DIR, 'index.ts'),
+    entry: SRC_DIR,
     output: {
         path: LIB_DIR,
         clean: true,

@@ -7,7 +7,7 @@ interface Configuration extends MainConfiguration {
 }
 
 // plugins
-import HtmlWP from 'html-webpack-plugin'
+import HtmlPlugin from 'html-webpack-plugin'
 
 // path
 import { DEV_DIR, resolve } from './config/path'
@@ -36,12 +36,10 @@ const Config: Configuration = {
         },
     },
     plugins: [
-        new HtmlWP({
-            filename: 'index.html',
-            template: resolve(DEV_DIR, 'template.html'),
-            inject: true,
-            publicPath: '/',
-            minify: false,
+        new HtmlPlugin({
+            templateContent: '<div id="root" />',
+            // publicPath: '/',
+            // minify: false,
         }),
     ],
 }
