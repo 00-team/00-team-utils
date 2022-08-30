@@ -18,7 +18,8 @@
         "00 Team",
         "00 Team Utils",
         "Utils",
-        "React Utils"
+        "React Utils",
+        "Sass Utils"
     ],
     "author": "00 Team",
     "license": "GPL-3.0",
