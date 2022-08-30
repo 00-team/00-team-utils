@@ -27,4 +27,6 @@ const DisplayNumbers: DN = (n, mn = 1_000, mx) => {
     return NFormatter.format(n)
 }
 
-export { C, Empty, DisplayNumbers }
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
+export { C, Empty, DisplayNumbers, sleep }
