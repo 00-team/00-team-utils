@@ -1,7 +1,7 @@
 {
     "name": "@00-team/utils",
     "private": false,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "00 Team React Utils",
     "main": "./lib/index.js",
     "sass": "./lib/sass/",

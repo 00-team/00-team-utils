@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 
 import { sleep } from '..'
 
@@ -24,13 +24,12 @@ interface TyperProps {
     DeleteDelay?: Delayer
     MidDelay?: Delayer
     EndDelay?: Delayer
-    CursorStyle?: CSSProperties
     CursorFrames?: Keyframe[]
     CursorOptions?: KeyframeAnimationOptions
 }
 
 const Typer: FC<TyperProps> = ({ words, ...props }) => {
-    const { CursorFrames = DEFAULT_FRAMES, CursorStyle } = props
+    const { CursorFrames = DEFAULT_FRAMES } = props
     const { DeleteDelay = 100, WriteDelay = 100 } = props
     const { MidDelay = 1500, EndDelay = 500 } = props
     const { CursorOptions = DEFAULT_OPTIONS } = props
@@ -51,7 +50,6 @@ const Typer: FC<TyperProps> = ({ words, ...props }) => {
 
             // write
             for (const char of w.split('')) {
-                console.log(w)
                 setWord(w => w + char)
                 await sleep(GetDelayed(WriteDelay))
             }
@@ -84,7 +82,7 @@ const Typer: FC<TyperProps> = ({ words, ...props }) => {
     return (
         <>
             <span className='word'>{word}</span>
-            <span className='cursor' ref={cursor} style={CursorStyle} />
+            <span className='cursor' ref={cursor} />
         </>
     )
 }
