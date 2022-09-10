@@ -42,35 +42,44 @@ const Typer: FC<TyperProps> = ({ words, ...props }) => {
         else return delayer()
     }
 
-    const Loop = async () => {
-        let word_index = 0
-
-        while (true) {
-            let w = words[word_index]!
+    const Loop = async (signal: AbortSignal) => {
+        for (let wdx = 0; !signal.aborted; wdx++) {
+            if (wdx >= words.length) wdx = 0
+            const word = words[wdx]!
 
             // write
-            for (const char of w.split('')) {
+            for (const char of word.split('')) {
+                if (signal.aborted) break
                 setWord(w => w + char)
                 await sleep(GetDelayed(WriteDelay))
             }
 
+            if (signal.aborted) break
             await sleep(GetDelayed(MidDelay))
 
             // delete
-            for (let i = 0; i < w.length; i++) {
+            for (let i = 0; i < word.length; i++) {
+                if (signal.aborted) break
                 setWord(w => w.slice(0, -1))
                 await sleep(GetDelayed(DeleteDelay))
             }
 
+            if (signal.aborted) break
             await sleep(GetDelayed(EndDelay))
 
-            word_index++
-            if (word_index >= words.length) word_index = 0
+            // ensure that the full word is deleted
+            setWord('')
         }
     }
 
     useEffect(() => {
-        Loop()
+        let stop = new AbortController()
+        Loop(stop.signal)
+
+        return () => {
+            stop.abort()
+            setWord('')
+        }
     }, [words])
 
     useEffect(() => {
