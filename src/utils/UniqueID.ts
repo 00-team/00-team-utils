@@ -1,6 +1,9 @@
 const OO_UID_COUNTER: { [k: string]: number } = {}
 
-function UniqueID(prefix = 'default') {
+type PrefixType = string | number | boolean
+function UniqueID(...prefixs: PrefixType[]) {
+    let prefix = prefixs.map(i => `${i}`).join('_')
+
     if (!OO_UID_COUNTER[prefix]) {
         OO_UID_COUNTER[prefix] = 0
     }
